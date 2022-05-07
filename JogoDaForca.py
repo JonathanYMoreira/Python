@@ -1,7 +1,11 @@
+#secreto = 'suspresa'
 digitadas = []
 chances = 3
 baixar_tela = 'Vamos Começar'
 registro = []
+
+def linha():
+    print('--------------------------------------------------------------------------')
 
 print('Vamos jogar forca!')
 secreto = input('Digite uma palavra? ')
@@ -53,8 +57,9 @@ while True:
             secreto_temporario += '*'
 
     if secreto_temporario == secreto:
-        print('******************')
+        linha()
         print('Você acertou a palavra toda!!')
+        linha()
         break
     else:
         print(f'A palavra esta assim {secreto_temporario}')
