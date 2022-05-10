@@ -37,7 +37,6 @@ pyautogui.click(x=405, y=430)
 pyautogui.PAUSE = 2  # aguardar antes de executar cada passo do pyautogui
 
 # passo 1: entrar no sistema da empresa(neste caso link do drive)
-pyautogui.hotkey("ctrl", "t")
 pyperclip.copy("https://drive.google.com/drive/folders/149xknr9JvrlEnhNWO49zPcw0PW5icxga")
 pyautogui.hotkey("ctrl", "v")
 pyautogui.press("enter")
