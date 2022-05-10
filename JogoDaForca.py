@@ -4,10 +4,15 @@ chances = 3
 baixar_tela = 'Vamos Começar'
 registro = []
 
+def linha():
+    print('--------------------------------------------------------------------------')
+
 print('Vamos jogar forca!')
 secreto = input('Digite uma palavra? ')
+secreto = secreto.lower()
 dica = input('Digite uma dica? ')
 
+# usado para dar um espaço e não mostrar senha na tela
 for aux in baixar_tela:
     print(aux)
 
@@ -17,6 +22,7 @@ while True:
         break
     print(f'A dica é : {dica}')
     letra = input('Digite uma letra: ')
+    letra = letra.lower()
 
     if len(letra) > 1:
         print('Isso não esta certo, digite apenas uma letra! ')
@@ -26,6 +32,7 @@ while True:
     digitadas.append(registro)
 
     if letra in secreto:
+        print('')
         print(f'a letra {letra} existe na palavra secreta')
         print(f'Você ainda tem {chances} tentativas!')
         print(f'A dica é : {dica}')
@@ -44,12 +51,15 @@ while True:
     for letra_secreta in secreto:
         if letra_secreta in digitadas:
             secreto_temporario += letra_secreta
+        elif secreto_temporario == ' ':
+            secreto_temporario += '_'
         else:
             secreto_temporario += '*'
 
     if secreto_temporario == secreto:
-        print('******************')
+        linha()
         print('Você acertou a palavra toda!!')
+        linha()
         break
     else:
         print(f'A palavra esta assim {secreto_temporario}')
